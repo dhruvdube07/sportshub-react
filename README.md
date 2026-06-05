@@ -1,5 +1,6 @@
-1Elite/learn/src
 # SportsHub React
+> ### 🚀 [Click Here to View Code](https://github.com/dhruvdube07/sportshub-react/tree/main/1Elite/learn/src)
+> Click the link above to explore the main React source components (`src` folder).
 
 A simple React website project for managing sports content.
 

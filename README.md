@@ -27,24 +27,7 @@ SportsHub React is built to feel fast, polished, and ready for real web interact
 - Redirect-ready routes and flow-friendly user paths
 - Easy local setup and deployment
 
-## Project structure
 
-- `Webdev/src/` — main React app source
-- `Webdev/src/components/` — UI components
-- `Webdev/src/lib/supabaseClient.js` — Supabase setup
-- `Webdev/.env.local` — local environment variables
-
-## Local setup
-
-```bash
-git clone https://github.com/dhruvdube07/sportshub-react.git
-cd Webdev
-npm install
-npm run dev
-
-
-
-# SportsHub React
 > ### 🚀 [Click Here to View Code](https://github.com/dhruvdube07/sportshub-react/tree/main/Webdev/src)
 > Click the link above to explore the main React source components (`src` folder).
 
@@ -62,7 +45,20 @@ A simple React website project for managing sports content.
 <img width="1321" height="296" alt="image" src="https://github.com/user-attachments/assets/8a851012-b04e-4645-b8dd-32099ff23cf7" />
 
 
+## Project structure
 
+- `Webdev/src/` — main React app source
+- `Webdev/src/components/` — UI components
+- `Webdev/src/lib/supabaseClient.js` — Supabase setup
+- `Webdev/.env.local` — local environment variables
+
+## Local setup
+
+```bash
+git clone https://github.com/dhruvdube07/sportshub-react.git
+cd Webdev
+npm install
+npm run dev
 
 
 ## How to run locally

@@ -1,0 +1,19 @@
+# Node
+node_modules/
+
+# Vite build
+learn/dist/
+
+# Env/local config (ignore local env files)
+*.local
+.env*
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+logs
+*.log
+npm-debug.log*

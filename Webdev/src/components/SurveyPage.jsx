@@ -13,6 +13,7 @@ function SurveyPage() {
   const [form, setForm] = useState(initialForm);
   const [activeSurvey, setActiveSurvey] = useState(null);
   const [submittedSurvey, setSubmittedSurvey] = useState(null);
+  const [previewSurvey, setPreviewSurvey] = useState(null);
   const [timer, setTimer] = useState(0);
   const [statusMessage, setStatusMessage] = useState(
     "Fill out the survey and submit it. You have 60 seconds to edit or delete it, or choose direct submit to finalize immediately."
@@ -51,6 +52,7 @@ function SurveyPage() {
 
   const updateField = (field, value) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+    setPreviewSurvey(null);
   };
 
   const getClientInfo = () => {
@@ -145,9 +147,20 @@ function SurveyPage() {
     }
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    await submitSurvey({ direct: false });
+  const handlePreview = (event) => {
+    if (event) event.preventDefault();
+
+    const preview = {
+      name: form.name,
+      email: form.email,
+      survey_title: form.surveyTitle,
+      feedback: form.feedback,
+      rating: Number(form.rating),
+      is_finalized: false,
+    };
+
+    setPreviewSurvey(preview);
+    setStatusMessage("Survey preview updated. Use Submit final to save it permanently.");
   };
 
   const handleDirectSubmit = async () => {
@@ -203,6 +216,8 @@ function SurveyPage() {
     setStatusMessage("Survey deleted. You can submit a new one anytime.");
     setBusy(false);
   };
+
+  const previewSource = previewSurvey || activeSurvey;
 
   if (submittedSurvey) {
     return (
@@ -293,7 +308,7 @@ function SurveyPage() {
 
       <div className="survey-grid">
         <div className="survey-card">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handlePreview}>
             <div className="survey-field">
               <label htmlFor="name">Name</label>
               <input
@@ -352,7 +367,7 @@ function SurveyPage() {
 
             <div className="survey-actions">
               <button className="survey-button" type="submit" disabled={busy}>
-                {activeSurvey && !activeSurvey.is_finalized ? "Update survey" : "Submit survey"}
+                Preview survey
               </button>
               <button
                 type="button"
@@ -380,25 +395,25 @@ function SurveyPage() {
           <h3>Survey preview</h3>
           <p className="status">{statusMessage}</p>
 
-          {activeSurvey ? (
+          {previewSource ? (
             <>
               <p>
-                <strong>Title:</strong> {activeSurvey.survey_title}
+                <strong>Title:</strong> {previewSource.survey_title}
               </p>
               <p>
-                <strong>Name:</strong> {activeSurvey.name}
+                <strong>Name:</strong> {previewSource.name}
               </p>
               <p>
-                <strong>Email:</strong> {activeSurvey.email}
+                <strong>Email:</strong> {previewSource.email}
               </p>
               <p>
-                <strong>Rating:</strong> {activeSurvey.rating} / 5
+                <strong>Rating:</strong> {previewSource.rating} / 5
               </p>
               <p>
-                <strong>Feedback:</strong> {activeSurvey.feedback || "No extra notes provided."}
+                <strong>Feedback:</strong> {previewSource.feedback || "No extra notes provided."}
               </p>
               <div className="countdown">
-                {activeSurvey.is_finalized ? (
+                {previewSource.is_finalized ? (
                   <span className="final">This survey is final.</span>
                 ) : (
                   <span>Editable for {timer} second{timer === 1 ? "" : "s"}.</span>
@@ -406,7 +421,7 @@ function SurveyPage() {
               </div>
             </>
           ) : (
-            <p>Your survey preview will appear here after submission.</p>
+            <p>Complete the form and click Preview survey to see it here.</p>
           )}
         </div>
       </div>

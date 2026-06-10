@@ -31,5 +31,5 @@ export const supabase = getSupabase();
 
 export const supabaseErrorMessage =
   !envUrl || !envKey
-    ? 'Missing Supabase environment variables. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to learn/.env.local or use the temporary Dev Key form on the Survey page.'
+    ? 'Missing Supabase environment variables. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to Webdev/.env.local or use the temporary Dev Key form on the Survey page.'
     : null;

@@ -15,35 +15,35 @@ function SportsCards() {
 
       <div className="cards">
 
-        <a
+        <div
           className="card"
-          href="https://www.formula1.com"
-          target="_blank"
-          rel="noreferrer"
+          onClick={() =>
+            openSite("https://www.formula1.com")
+          }
         >
           <img src={f1} alt="F1" />
           <h3>Formula 1</h3>
-        </a>
+        </div>
 
-        <a
+        <div
           className="card"
-          href="https://www.fifa.com"
-          target="_blank"
-          rel="noreferrer"
+          onClick={() =>
+            openSite("https://www.fifa.com")
+          }
         >
           <img src={fifa} alt="FIFA" />
           <h3>FIFA</h3>
-        </a>
+        </div>
 
-        <a
+        <div
           className="card"
-          href="https://www.motogp.com"
-          target="_blank"
-          rel="noreferrer"
+          onClick={() =>
+            openSite("https://www.motogp.com")
+          }
         >
           <img src={motogp} alt="MotoGP" />
           <h3>MotoGP</h3>
-        </a>
+        </div>
 
       </div>
 

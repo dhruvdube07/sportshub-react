@@ -3,6 +3,10 @@ node_modules/
 
 # Vite build
 learn/dist/
+.vite/
+
+# Cache and archive folders
+cache/
 
 # Env/local config (ignore local env files)
 *.local

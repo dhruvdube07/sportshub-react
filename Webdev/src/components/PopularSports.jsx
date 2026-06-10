@@ -11,37 +11,21 @@ function PopularSports() {
 
       <div className="popular">
 
-        <div
-          onClick={() =>
-            openSite("https://www.icc-cricket.com")
-          }
-        >
+        <a href="https://www.icc-cricket.com" target="_blank" rel="noreferrer">
           🏏 Cricket
-        </div>
+        </a>
 
-        <div
-          onClick={() =>
-            openSite("https://www.atptour.com")
-          }
-        >
+        <a href="https://www.atptour.com" target="_blank" rel="noreferrer">
           🎾 Tennis
-        </div>
+        </a>
 
-        <div
-          onClick={() =>
-            openSite("https://www.nba.com")
-          }
-        >
+        <a href="https://www.nba.com" target="_blank" rel="noreferrer">
           🏀 NBA
-        </div>
+        </a>
 
-        <div
-          onClick={() =>
-            openSite("https://www.ufc.com")
-          }
-        >
+        <a href="https://www.ufc.com" target="_blank" rel="noreferrer">
           🥊 UFC
-        </div>
+        </a>
 
       </div>
 

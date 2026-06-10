@@ -2,9 +2,6 @@
 
 > 🚀 A sleek React + Vite sports app with Supabase-powered survey storage, smooth UI flow, and modern web redirect handling.
 
-This repo now runs from `Webdev/` and the main React source lives in:
-`https://github.com/dhruvdube07/sportshub-react/tree/main/Webdev/src`
-
 SportsHub React is built to feel fast, polished, and ready for real web interaction:
 - smooth transitions and responsive layout
 - Supabase-backed survey save + preview workflow

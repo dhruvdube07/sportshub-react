@@ -1,4 +1,50 @@
 # SportsHub React
+
+> 🚀 A sleek React + Vite sports app with Supabase-powered survey storage, smooth UI flow, and modern web redirect handling.
+
+This repo now runs from `Webdev/` and the main React source lives in:
+`https://github.com/dhruvdube07/sportshub-react/tree/main/Webdev/src`
+
+SportsHub React is built to feel fast, polished, and ready for real web interaction:
+- smooth transitions and responsive layout
+- Supabase-backed survey save + preview workflow
+- clean redirect flow between sections and form results
+- modern Vite development experience
+
+## What makes it special
+
+- **React + Vite** for instant hot reload and fast bundle builds
+- **Supabase integration** for live backend storage without server setup
+- **Survey preview + direct submit** for quick feedback and production-ready form flow
+- **Web redirect-friendly** structure for landing pages, content sections, and results navigation
+- **Clean sports UI** for managing cards, categories, and featured sports content
+
+## Features
+
+- Dynamic sports content display
+- Supabase form submission with preview
+- Smooth page and state transitions
+- Redirect-ready routes and flow-friendly user paths
+- Easy local setup and deployment
+
+## Project structure
+
+- `Webdev/src/` — main React app source
+- `Webdev/src/components/` — UI components
+- `Webdev/src/lib/supabaseClient.js` — Supabase setup
+- `Webdev/.env.local` — local environment variables
+
+## Local setup
+
+```bash
+git clone https://github.com/dhruvdube07/sportshub-react.git
+cd Webdev
+npm install
+npm run dev
+
+
+
+# SportsHub React
 > ### 🚀 [Click Here to View Code](https://github.com/dhruvdube07/sportshub-react/tree/main/Webdev/src)
 > Click the link above to explore the main React source components (`src` folder).
 

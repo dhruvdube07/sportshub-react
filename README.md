@@ -46,20 +46,48 @@ A simple React website project for managing sports content.
 
 - `Webdev/src/` — main React app source
 - `Webdev/src/components/` — UI components
-- `Webdev/src/lib/supabaseClient.js` — Supabase setup
-- `Webdev/.env.local` — local environment variables
+- `Webdev/src/lib/supabaseClient.js` — Supabase setup (reads Vite env vars)
+- `Webdev/.env.local` — local environment variables (gitignored)
+
+## Deployment (Vercel)
+
+This repository's active app lives in the `Webdev` subfolder. To deploy to Vercel, the project includes a `vercel.json` that tells Vercel to build from `Webdev/package.json`.
+
+Required environment variables on Vercel (project Settings → Environment Variables):
+
+- `VITE_SUPABASE_URL` — your Supabase project URL
+- `VITE_SUPABASE_ANON_KEY` — your Supabase anon/public key
+
+After adding the variables, trigger a redeploy in the Vercel dashboard.
+
+Note: Do NOT commit real secrets to the repository. Use Vercel project variables or a local `.env.local` file for development.
 
 ## Local setup
+
+1. Clone the repository and change into the app folder:
 
 ```bash
 git clone https://github.com/dhruvdube07/sportshub-react.git
 cd Webdev
+```
+
+2. Install dependencies and run the dev server:
+
+```bash
 npm install
 npm run dev
+```
 
+3. For production build preview:
 
-## How to run locally
-1. Clone the repository
-2. Run `npm install`
-3. Run `npm start`
+```bash
+npm run build
+npm run preview
+```
+
+## Creating a Pull Request
+
+I will create a branch `update-all` with the requested updates and push it to GitHub. You can open a PR at:
+
+https://github.com/dhruvdube07/sportshub-react/compare/main...update-all?expand=1
 

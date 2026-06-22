@@ -5,6 +5,7 @@ import SportsCards from "./components/SportsCards";
 import PopularSports from "./components/PopularSports";
 import Footer from "./components/Footer";
 import SurveyPage from "./components/SurveyPage";
+import ChatPage from "./components/ChatPage";
 import "./App.css";
 
 function App() {
@@ -28,6 +29,15 @@ function App() {
           element={
             <>
               <SurveyPage />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/chat"
+          element={
+            <>
+              <ChatPage />
               <Footer />
             </>
           }

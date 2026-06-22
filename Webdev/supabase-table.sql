@@ -22,3 +22,39 @@ create table if not exists surveys (
 -- create policy "public update" on surveys for update using (true);
 -- create policy "public delete" on surveys for delete using (true);
 -- create policy "public select" on surveys for select using (true);
+
+create table if not exists chat_users (
+  id bigint generated always as identity primary key,
+  name text not null unique,
+  pin text not null,
+  created_at timestamptz not null default now()
+);
+
+create table if not exists chat_rooms (
+  id bigint generated always as identity primary key,
+  name text not null,
+  passkey text not null,
+  creator_id bigint references chat_users(id) on delete cascade,
+  expires_at timestamptz not null,
+  created_at timestamptz not null default now()
+);
+
+create table if not exists chat_messages (
+  id bigint generated always as identity primary key,
+  room_id bigint references chat_rooms(id) on delete cascade,
+  user_id bigint references chat_users(id) on delete set null,
+  user_name text not null,
+  text text not null,
+  created_at timestamptz not null default now()
+);
+
+-- Example policy for public access on chat tables (ONLY for prototyping):
+-- alter table chat_users enable row level security;
+-- create policy "public insert" on chat_users for insert using (true);
+-- create policy "public select" on chat_users for select using (true);
+-- alter table chat_rooms enable row level security;
+-- create policy "public insert" on chat_rooms for insert using (true);
+-- create policy "public select" on chat_rooms for select using (true);
+-- alter table chat_messages enable row level security;
+-- create policy "public insert" on chat_messages for insert using (true);
+-- create policy "public select" on chat_messages for select using (true);

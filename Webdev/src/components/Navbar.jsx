@@ -15,6 +15,9 @@ function Navbar() {
           <Link to="/survey">Survey</Link>
         </li>
         <li>
+          <Link to="/chat">Chat</Link>
+        </li>
+        <li>
           <a href="https://www.formula1.com" target="_blank" rel="noreferrer">F1</a>
         </li>
         <li>
